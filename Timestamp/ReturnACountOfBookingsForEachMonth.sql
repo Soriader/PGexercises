@@ -1,0 +1,8 @@
+-- Return a count of bookings for each month, sorted by month
+
+SELECT
+    date_trunc('month', starttime) AS month,
+    COUNT(*) AS count
+FROM cd.bookings
+GROUP BY date_trunc('month', starttime)
+ORDER BY month;
